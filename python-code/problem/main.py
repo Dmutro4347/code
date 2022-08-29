@@ -19,6 +19,3 @@ while True:
 
   elif answer == '3':
     break
-
-  elif answer == '4':
-    pass
