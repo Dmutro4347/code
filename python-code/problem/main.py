@@ -1,20 +1,24 @@
 import view
 import model
 
-menu = view.View()
-answer = menu.main_menu()
+while True:
 
-if answer == '1':
-  model.get_task_list()
-  answer = menu.task_menu()
-  model.execute_task(answer)
+  menu = view.View()
+  answer = menu.main_menu()
 
-elif answer == '2':
-  answer = menu.new_task_menu()
-  model.new_task(answer[0], answer[1])
+  if answer == '1':
+    model.get_task_list()
+    answer = menu.task_menu()
+    model.execute_task(answer)
+    continue
 
-elif answer == '3':
-  pass
+  elif answer == '2':
+    answer = menu.new_task_menu()
+    model.new_task(answer[0], answer[1])
+    continue
 
-elif answer == '4':
-  pass
+  elif answer == '3':
+    break
+
+  elif answer == '4':
+    pass

@@ -3,6 +3,8 @@ class View:
   def main_menu(self):
     print('1 - Список задач')
     print('2 - Додати задачу')
+    print('3 - Вихід')
+
 
     return input('Що робимо? ')
 
