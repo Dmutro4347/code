@@ -16,7 +16,10 @@ def get_task_list():
   
 def last_id():
   task_list_keys = [i for i in task_list]
-  return int(task_list_keys[-1][0])
+  try:
+    return int(task_list_keys[-1][0])
+  except Exception as ex_:
+    return '2'
 
 def new_task(task_name, task_description):
   task_list_write = open('/home/arfors/.config/code/python-code/problem/json/task-list.json', 'w')
@@ -27,7 +30,6 @@ def new_task(task_name, task_description):
 def execute_task(task_id):
   for i in task_list:
     if i[0] == task_id:
-      sp.call(task_list.get(i), shell=False)
+      sp.call(task_list.get(i), shell=True)
 
-if __name__ == '__main__':
-  execute_task('2')
+task_list_read.close()
