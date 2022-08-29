@@ -16,11 +16,17 @@ def get_task_list():
     print(i)
   
 def last_id():
-  pass
+  task_list_keys = [i for i in task_list]
+  return int(task_list_keys[-1][0])
 
 def new_task(task_name, task_description):
-  task_list[f'{task_name}'] = task_description
+  task_list[f'{last_id() + 1} - {task_name}'] = task_description
   json.dump(task_list, task_list_write)
 
+def execute_task(task_id):
+  for i in task_list:
+    if task_list[0] == task_id:
+      print(task_list.get(i))
+
 if __name__ == '__main__':
-  new_task('test', 'test')
+  execute_task('2')
