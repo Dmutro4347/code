@@ -18,4 +18,10 @@ while True:
     continue
 
   elif answer == '3':
+    model.get_task_list()
+    answer = menu.del_task_menu()
+    model.del_task(answer)
+    continue
+
+  elif answer == '4':
     break

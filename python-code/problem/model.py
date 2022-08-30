@@ -27,6 +27,12 @@ def new_task(task_name, task_description):
   json.dump(task_list, task_list_write)
   task_list_write.close()
 
+def del_task(task_id):
+  for i in task_list:
+    if i[0] == task_id:
+      del task_list[f'{i}']
+      break
+    
 def execute_task(task_id):
   for i in task_list:
     if i[0] == task_id:
