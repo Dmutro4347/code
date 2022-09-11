@@ -11,6 +11,6 @@ def binary_search(list, item):
     elif mid < item:
       low = mid + 1
 
-# a = [i for i in range(1, 11)]
+a = [i for i in range(1, 11)]
 
-# print(binary_search(a, 5))
+print(binary_search(a, 5))
